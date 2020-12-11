@@ -1,0 +1,599 @@
+// Homework_5, Restaurant layout, SCSS, adaptive, Krygin D.A., 11.12.2020
+
+$debugBorderEnable: false;
+$debugBorderColor: black;
+
+$fontPlayfairDisplay: 'Playfair Display', 'Times New Roman', Times, serif;
+$fontSintony: 'Sintony', Arial, Helvetica, sans-serif;
+
+$column1_5Width: 15%;
+$column2_5Width: 14%;
+$column3_5Width: 40%;
+$column4_5Width: 14%;
+$column5_5Width: 15%;
+
+$column1_3Width: 30%;
+$column2_3Width: 40%;
+$column3_3Width: 30%;
+
+$column1_4Width: 15%;
+$column2_4Width: 35%;
+$column3_4Width: 35%;
+$column4_4Width: 15%;
+
+$contentBackgroundColor: white;
+$colorText: orange;
+
+$headerHeight: 50px;
+$headerMenuColor: black;
+$headerBackgroundColor: white;
+$headerButtonFontSize: 12px;
+
+$buttonColor: orange;
+$buttonTextColor: white;
+$buttonHeight: 30px;
+$buttonBorderRadius: 5px;
+
+$rowEmptyHeight: 40px;
+
+$row1TextColor: white;
+$row1Text1Size: 3.8vw;
+$row1Text2Size: 2.8vw;
+
+$row2BackgroundColor: rgb(230,230,230);
+$row2Text1Size: 14px;
+$row2Text2Size: 16px;
+$row2Text3Size: 24px;
+
+$row4Shadow: silver;
+$row4DeliveryFontSize: 12px;
+$row4PhoneFontSize: 20px;
+$row4PriceFontSize: 24px;
+
+$footerColor: rgb(50, 50, 50);
+$FBButtonColor: rgb(59,89,152);
+$TWButtonColor: rgb(85,172,238);
+$GButtonColor: rgb(221,75,57);
+$footerTextColor: gray;
+$footerFontSize: 12px;
+
+
+%divBorderEnabled {
+    border: 1px solid $debugBorderColor;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column1 {
+    min-width: 120px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column1_5Width - 1%;
+    }
+    @else {
+        width: $column1_5Width;
+    }
+}
+
+.column2 {
+    min-width: 120px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column2_5Width - 1%;
+    }
+    @else {
+        width: $column2_5Width;
+    }
+}
+
+.column3 {
+    min-width: 130px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column3_5Width - 1%;
+    }
+    @else {
+        width: $column3_5Width;
+    }
+}
+
+.column4 {
+    min-width: 120px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column4_5Width - 1%;
+    }
+    @else {
+        width: $column4_5Width;
+    }
+}
+
+.column5 {
+    min-width: 120px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column5_5Width - 1%;
+    }
+    @else {
+        width: $column5_5Width;
+    }
+}
+
+.colorText {
+    color: $colorText;
+}
+
+.rowEmpty {
+    margin-top: $rowEmptyHeight;
+}
+
+.content {
+    position: relative;
+    top: 80px;
+    z-index: 1;
+    background-color: $contentBackgroundColor;
+}
+
+///////////////////////////// HEADER //////////////////////////////////
+.header_fixed {
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    background-color: $headerBackgroundColor;
+    width: 100%;
+}
+
+.header {
+    height: $headerHeight;
+    justify-content: space-between;
+
+    img {
+        width: 100%;
+    }
+}
+
+.headerLogo {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.headerMenu {
+    align-items: center;
+    //padding: 5px;
+}
+
+.headerMenuText {
+    text-decoration: none;
+    color: $headerMenuColor;
+    font-size: $headerButtonFontSize;
+    font-weight: bold;
+}
+
+.headerButton {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.button_img {
+    background-color: $buttonColor;
+    width: 100%;
+    text-decoration: none;
+    border-radius: $buttonBorderRadius;
+    border-style: none;
+    color: $buttonTextColor;
+    font-size: $headerButtonFontSize;
+    cursor: pointer;
+}
+
+///////////////////////////// ROW1 /////////////////////////////////////
+.row1Relative {
+    position: relative;
+    height: fit-content;
+}
+
+.img_row1 {
+    width: 100%;
+}
+
+.row1TextBackground {
+    position: absolute;
+    width: 100%;
+}
+
+.row1TextFlag {
+    position: relative;
+    width: 100%;
+
+    .row1Text {
+        margin-top: 10%;
+        margin-left: 15%;
+        font-family: $fontPlayfairDisplay;
+        font-weight: bold;
+        color: $row1TextColor;
+        
+        .row1Text1 {
+            font-size: $row1Text1Size;
+        }
+    
+        .row1Text2 {
+            font-size: $row1Text2Size;
+        }
+    }
+    
+    .row1Flag {
+        margin-top: 1%;
+        margin-left: 15%;
+
+        .row1ImgFlag {
+            width: 17%;
+        }
+    }
+}
+
+///////////////////////////// ROW2 /////////////////////////////////////
+.row2 {
+    background-color: $row2BackgroundColor;
+    font-family: $fontSintony;
+}
+
+.row2margin {
+    margin: 0 10px 0 10px;
+}
+
+.row2Text1 {
+    font-family: $fontSintony;
+    font-size: $row2Text1Size;
+    font-weight: bold;
+}
+
+.row2Text2 {
+    font-family: $fontSintony;
+    font-size: $row2Text2Size;
+    font-weight: bold;
+}
+
+.row2Text3 {
+    font-family: $fontPlayfairDisplay;
+    font-size: $row2Text3Size;
+    font-weight: bold;
+}
+
+.column1Row2 {
+    min-width: 150px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column1_3Width - 1%;
+    }
+    @else {
+        width: $column1_3Width;
+    }
+}
+
+.column2Row2 {
+    min-width: 150px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column2_3Width - 1%;
+    }
+    @else {
+        width: $column2_3Width;
+    }
+}
+
+.column3Row2 {
+    min-width: 150px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column3_3Width - 1%;
+    }
+    @else {
+        width: $column3_3Width;
+    }
+}
+
+///////////////////////////// ROW3 /////////////////////////////////////
+.row3Empty {
+    margin-top: $rowEmptyHeight;
+}
+
+.column1Row3 {
+    min-width: 80px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column1_4Width - 1%;
+    }
+    @else {
+        width: $column1_4Width;
+    }
+}
+
+.column2Row3 {
+    min-width: 80px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column2_4Width - 1%;
+    }
+    @else {
+        width: $column2_4Width;
+    }
+}
+
+.column3Row3 {
+    min-width: 80px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column3_4Width - 1%;
+    }
+    @else {
+        width: $column3_4Width;
+    }
+}
+
+.column4Row3 {
+    min-width: 80px;
+    @if $debugBorderEnable == true {
+        @extend %divBorderEnabled;
+        width: $column4_4Width - 1%;
+    }
+    @else {
+        width: $column4_4Width;
+    }
+}
+
+.button {
+    background-color: $buttonColor;
+    height: $buttonHeight;
+    border-radius: $buttonBorderRadius;
+    border-style: none;
+    color: $buttonTextColor;
+    font-size: $headerButtonFontSize;
+    cursor: pointer;
+}
+
+.buttonRow3 {
+    .button {
+        width: 120px;
+        margin-top: 15px;
+    }
+}
+
+.gridRow3 {
+    display: grid;
+
+    grid-template-columns: [column1] 47% [column2] 6% [column3] 47%;
+    grid-template-rows: [row1] 12% [row2] 2% [row3] 12% [row4] 2% [row5] 12%
+        [row6] 2% [row7] 12% [row8] 2% [row9] 12% [row10] 2%
+        [row11] 12% [row12] 2% [row13] 12% [row14] 2%;
+
+    .gridImage1 {
+        grid-row-start: row3;
+        grid-row-end: row8;
+        grid-column-start: column1;
+        grid-column-end: column1;
+    }
+
+    .gridImage2 {
+        grid-row-start: row1;
+        grid-row-end: row6;
+        grid-column-start: column3;
+        grid-column-end: column3;
+    }
+
+    .gridImage3 {
+        grid-row-start: row9;
+        grid-row-end: row14;
+        grid-column-start: column1;
+        grid-column-end: column1;
+    }
+
+    .gridImage4 {
+        grid-row-start: row7;
+        grid-row-end: row12;
+        grid-column-start: column3;
+        grid-column-end: column3;
+    }
+
+    .imageRow3 {
+        width: 100%;
+    }
+}
+
+///////////////////////////// ROW4 /////////////////////////////////////
+.gridRow4 {
+    display: grid;
+    text-align: center;
+
+    grid-template-columns: [column1] auto;
+    grid-template-rows: [row1] auto [row2] auto [row3] auto
+        [row4] auto [row5] auto [row6] auto;
+
+    .gridBigImage {
+        grid-row-start: row1;
+        grid-row-end: row4;
+        grid-column-start: column1;
+        grid-column-end: column1;
+    }
+
+    .gridColumns {
+        grid-row-start: row2;
+        grid-row-end: row6;
+        grid-column-start: column1;
+        grid-column-end: column1;
+    }
+
+    .delivery {
+        font-family: $fontSintony;
+        font-size: $row4DeliveryFontSize;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .phone {
+        font-family: $fontPlayfairDisplay;
+        font-size: $row4PhoneFontSize;
+        font-weight: bold;
+    }
+
+    .price {
+        font-family: $fontPlayfairDisplay;
+        font-size: $row4PriceFontSize;
+        font-weight: bold;
+    }
+
+    .columnMargin {
+        margin: 10px;
+        box-shadow: 0px 0px 15px 3px $row4Shadow;
+    }
+
+    .imageRow4 {
+        width: 100%;
+    }
+}
+
+///////////////////////////// FOOTER //////////////////////////////////
+.footer {
+    width: 100%;
+    color: $footerTextColor;
+    background-color: $footerColor;
+    height: 150px;
+    font-family: $fontSintony;
+    font-size: $footerFontSize;
+    text-align: center;
+
+    .footerRow1 {
+        height: 65px;
+    }
+
+    .footerTable {
+        width: 100%;
+    }
+
+    .tableEmptyColumn {
+        width: 50%;
+    }
+
+    .hrFooter1, .hrFooter2 {
+        width: 70%;
+        border: 1px solid $footerTextColor;
+    }
+
+    .FB, .TW, .G {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px; 
+
+        .imgFB, .imgTW, .imgG {
+            position: absolute;
+            top: 10px;
+        }
+
+        .imgFB {
+            left: 15px;
+        }
+
+        .imgTW {
+            left: 10px;
+        }
+
+        .imgG {
+            left: 10px;
+        }
+    }
+
+    .FB {
+        background-color: $FBButtonColor;
+    }
+
+    .TW {
+        background-color: $TWButtonColor;
+    }
+
+    .G {
+        background-color: $GButtonColor;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .footerColumn{
+        height: 0;
+        width: 0;
+
+        .hrFooter1 {
+            border: 1px solid $footerColor;
+        }
+
+        .hrFooter2 {
+            border: 1px solid $contentBackgroundColor;
+        }
+    }
+
+    .footerColumn3 {
+        width: 100%;
+    }
+
+    // .headerColumn1 {
+    //     height: 0;
+    //     width: 0;
+    // }
+
+    // .headerColumn2 {
+    //     height: 0;
+    //     width: 0;
+    // }
+
+    // .headerMenu {
+    //     width: 100%;
+    // }
+}
+
+@media screen and (max-width: 600px) {
+    .row3Empty {
+        margin-top: $rowEmptyHeight + 80px;
+    }
+
+    .column1Row3 {
+        width: 0;
+        height: 0;
+    }
+
+    .column2Row3 {
+        width: 100%;
+    }
+
+    .column3Row3 {
+        width: 100%;
+    }
+
+    .column4Row3 {
+        width: 0;
+        height: 0;
+    }
+    
+    .column1 {
+        width: 0%;
+    }
+
+    .column1Row4 {
+        width: 0;
+        height: 0;
+    }
+
+    .column2Row4 {
+        width: 100%;
+    }
+
+    .column3Row4 {
+        width: 100%;
+    }
+
+    .column4Row4 {
+        width: 0;
+        height: 0;
+    }
+
+}
